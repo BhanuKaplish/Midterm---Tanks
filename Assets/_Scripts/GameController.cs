@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
     //Private Instance Variables
     private int _scoreValue;
     private int _livesValue;
+    private AudioSource _gameoverSound;
 
     // PUBLIC INSTANCE VARIABLES
     public int tankCount;
@@ -48,10 +49,8 @@ public class GameController : MonoBehaviour {
     }
 
     //Public Instance Variables
-    //public int asteroidNumber = 4;
-    //public PlayerController player;
-    //public CoinController coin;
-    //public EnemyController enemy;
+    public PlayerController player;
+    public EnemyController enemy;
     public Text LivesLabel;
     public Text ScoreLabel;
     //public Text GameOverLabel;
@@ -94,9 +93,9 @@ public class GameController : MonoBehaviour {
         //this.HighscoreLabel.enabled = true;
         this.LivesLabel.enabled = false;
         this.ScoreLabel.enabled = false;
-        //this.player.gameObject.SetActive(false);
-        //this.coin.gameObject.SetActive(false);
+        this.player.gameObject.SetActive(false);
+        this.enemy.gameObject.SetActive(false);
         //this.RestartButton.gameObject.SetActive(true);
-        //this._gameoverSound.Play();
+        this._gameoverSound.Play();
     }
 }
